@@ -87,5 +87,5 @@ streamlit run app.py
 This project is licensed under the **MIT License**.
 
 ## 💡 Contact
-- **[https://www.upwork.com/freelancers/~012f4bbab3859fc1b2]** - Argha Dey Sarkar
+- **[Argha Dey Sarkar]** https://www.upwork.com/freelancers/~012f4bbab3859fc1b2
 - **[email2argha@gmail.com]** - Email Me
