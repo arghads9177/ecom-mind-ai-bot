@@ -88,4 +88,4 @@ This project is licensed under the **MIT License**.
 
 ## 💡 Contact
 - **[Argha Dey Sarkar]** https://www.upwork.com/freelancers/~012f4bbab3859fc1b2
-- **[email2argha@gmail.com]** - Email Me
+- **[email2argha@gmail.com]** Email Me
