@@ -1,0 +1,201 @@
+SKU,Product Name,Category,Brand,Price (USD),Stock
+GRO-30685,Milk Powder,Grocery,Brand C,16.73,128
+HOU-53340,Air Freshener,Household,Brand D,13.52,460
+GRO-24767,Rice,Grocery,Brand B,19.87,81
+GRO-83921,Sugar,Grocery,Brand B,7.37,292
+HOU-91821,Air Freshener,Household,Brand C,13.54,293
+HOU-35449,Sponges,Household,Brand A,21.05,143
+GRO-54305,Sugar,Grocery,Brand A,40.03,220
+HOU-64965,Mop,Household,Brand D,23.43,222
+GRO-41344,Milk Powder,Grocery,Brand C,18.03,145
+HOU-36758,Dish Soap,Household,Brand C,41.36,265
+GRO-16718,Olive Oil,Grocery,Brand B,3.4,485
+GRO-84548,Pasta,Grocery,Brand A,29.84,414
+HOU-30329,Sponges,Household,Brand B,28.45,344
+GRO-97093,Wheat Flour,Grocery,Brand D,49.36,166
+GRO-49701,Salt,Grocery,Brand D,45.27,457
+GRO-39004,Olive Oil,Grocery,Brand A,16.0,372
+HOU-21872,Detergent,Household,Brand B,22.81,158
+HOU-39068,Air Freshener,Household,Brand B,32.71,464
+GRO-40902,Salt,Grocery,Brand C,35.75,203
+HOU-23493,Garbage Bags,Household,Brand A,44.21,222
+HOU-47704,Detergent,Household,Brand B,48.58,258
+HOU-39949,Sponges,Household,Brand D,6.16,161
+GRO-17707,Milk Powder,Grocery,Brand C,37.68,392
+GRO-53295,Milk Powder,Grocery,Brand D,4.35,99
+HOU-88854,Garbage Bags,Household,Brand A,6.11,105
+HOU-68755,Laundry Softener,Household,Brand C,47.38,85
+GRO-68151,Rice,Grocery,Brand B,26.28,288
+HOU-24580,Garbage Bags,Household,Brand D,1.36,266
+GRO-36174,Milk Powder,Grocery,Brand A,4.88,222
+GRO-16177,Rice,Grocery,Brand C,14.77,140
+GRO-18371,Olive Oil,Grocery,Brand D,41.14,494
+HOU-25660,Mop,Household,Brand A,4.63,83
+HOU-13874,Mop,Household,Brand A,17.31,107
+HOU-91063,Mop,Household,Brand D,14.46,58
+HOU-56858,Air Freshener,Household,Brand B,8.84,276
+GRO-62354,Pasta,Grocery,Brand B,10.82,475
+HOU-40710,Mop,Household,Brand B,37.43,80
+HOU-66837,Detergent,Household,Brand A,46.06,245
+GRO-42528,Sugar,Grocery,Brand C,5.05,90
+HOU-68737,Toilet Paper,Household,Brand C,9.52,488
+HOU-65369,Toilet Paper,Household,Brand A,26.74,291
+GRO-91794,Wheat Flour,Grocery,Brand A,38.12,490
+GRO-53463,Milk Powder,Grocery,Brand C,26.75,341
+HOU-73717,Laundry Softener,Household,Brand C,33.17,294
+HOU-94129,Garbage Bags,Household,Brand D,35.54,217
+GRO-83283,Coffee,Grocery,Brand B,19.08,389
+HOU-88834,Mop,Household,Brand C,42.87,90
+HOU-27170,Air Freshener,Household,Brand D,17.18,352
+HOU-88123,Dish Soap,Household,Brand B,5.68,84
+HOU-99879,Sponges,Household,Brand D,33.02,96
+GRO-81635,Wheat Flour,Grocery,Brand C,30.07,259
+GRO-82940,Milk Powder,Grocery,Brand A,36.25,183
+HOU-53237,Toilet Paper,Household,Brand B,1.25,313
+HOU-33217,Broom,Household,Brand D,21.43,266
+HOU-14206,Garbage Bags,Household,Brand C,32.98,112
+HOU-33651,Sponges,Household,Brand C,40.88,109
+GRO-52997,Tea,Grocery,Brand A,11.73,451
+HOU-11595,Dish Soap,Household,Brand C,30.35,213
+GRO-48644,Coffee,Grocery,Brand B,12.73,203
+HOU-79129,Mop,Household,Brand D,6.26,212
+GRO-17460,Coffee,Grocery,Brand D,35.96,440
+GRO-45522,Wheat Flour,Grocery,Brand A,21.35,78
+GRO-70685,Rice,Grocery,Brand C,28.44,152
+GRO-35233,Rice,Grocery,Brand D,14.15,248
+HOU-62316,Garbage Bags,Household,Brand A,39.18,84
+HOU-69006,Mop,Household,Brand A,14.55,149
+GRO-52592,Tea,Grocery,Brand D,8.33,248
+GRO-76090,Wheat Flour,Grocery,Brand B,9.77,420
+HOU-73162,Broom,Household,Brand C,38.28,492
+HOU-42369,Toilet Paper,Household,Brand B,8.29,366
+HOU-91281,Dish Soap,Household,Brand A,23.66,479
+GRO-57855,Milk Powder,Grocery,Brand B,14.96,91
+HOU-70091,Detergent,Household,Brand C,36.84,257
+HOU-91450,Mop,Household,Brand D,5.62,408
+HOU-50118,Sponges,Household,Brand C,24.96,60
+GRO-28977,Wheat Flour,Grocery,Brand B,34.72,500
+GRO-50829,Olive Oil,Grocery,Brand C,21.92,347
+GRO-59635,Salt,Grocery,Brand D,2.12,335
+GRO-10161,Honey,Grocery,Brand C,1.64,176
+HOU-51766,Toilet Paper,Household,Brand A,10.24,41
+HOU-48002,Dish Soap,Household,Brand C,11.35,129
+GRO-91524,Rice,Grocery,Brand B,36.26,418
+GRO-72875,Pasta,Grocery,Brand D,7.03,444
+HOU-50491,Detergent,Household,Brand D,39.28,464
+GRO-23996,Salt,Grocery,Brand B,41.19,356
+HOU-54636,Air Freshener,Household,Brand A,19.4,284
+HOU-12320,Garbage Bags,Household,Brand C,15.51,17
+HOU-84259,Detergent,Household,Brand A,12.72,134
+HOU-20313,Paper Towels,Household,Brand C,37.72,277
+GRO-40133,Olive Oil,Grocery,Brand C,15.07,489
+GRO-29189,Salt,Grocery,Brand C,42.95,300
+HOU-87800,Garbage Bags,Household,Brand B,27.53,161
+HOU-39554,Paper Towels,Household,Brand C,16.34,182
+GRO-99771,Milk Powder,Grocery,Brand B,17.64,81
+GRO-57844,Rice,Grocery,Brand A,6.23,95
+GRO-19815,Rice,Grocery,Brand B,26.72,35
+GRO-20138,Milk Powder,Grocery,Brand A,9.47,351
+HOU-40041,Dish Soap,Household,Brand C,37.07,494
+GRO-85259,Sugar,Grocery,Brand A,11.17,203
+GRO-73726,Milk Powder,Grocery,Brand D,27.42,458
+GRO-14770,Wheat Flour,Grocery,Brand C,43.43,410
+GRO-81973,Coffee,Grocery,Brand D,43.61,434
+HOU-98734,Air Freshener,Household,Brand C,36.47,394
+HOU-44548,Garbage Bags,Household,Brand B,33.09,228
+GRO-89707,Honey,Grocery,Brand A,16.08,326
+GRO-51114,Wheat Flour,Grocery,Brand A,21.01,215
+GRO-54850,Pasta,Grocery,Brand A,16.84,96
+GRO-62114,Honey,Grocery,Brand D,13.47,242
+GRO-93446,Sugar,Grocery,Brand A,43.64,317
+GRO-89172,Tea,Grocery,Brand A,13.74,321
+HOU-11805,Paper Towels,Household,Brand D,17.64,429
+GRO-32709,Coffee,Grocery,Brand A,32.91,299
+GRO-25602,Honey,Grocery,Brand B,13.89,495
+GRO-39659,Rice,Grocery,Brand C,16.17,466
+HOU-94065,Paper Towels,Household,Brand B,36.37,237
+GRO-58161,Pasta,Grocery,Brand C,35.39,18
+GRO-19764,Rice,Grocery,Brand C,18.05,45
+GRO-34098,Pasta,Grocery,Brand D,12.63,51
+GRO-49361,Honey,Grocery,Brand C,22.44,259
+HOU-53782,Air Freshener,Household,Brand C,48.98,421
+HOU-64408,Paper Towels,Household,Brand C,12.12,500
+HOU-33234,Sponges,Household,Brand B,15.33,440
+HOU-88953,Air Freshener,Household,Brand C,32.57,164
+GRO-35192,Salt,Grocery,Brand D,38.2,116
+GRO-66947,Salt,Grocery,Brand B,46.04,424
+HOU-11272,Air Freshener,Household,Brand C,16.14,311
+GRO-54060,Coffee,Grocery,Brand D,27.43,481
+GRO-59477,Olive Oil,Grocery,Brand C,13.76,261
+GRO-76097,Milk Powder,Grocery,Brand B,16.36,431
+GRO-10125,Olive Oil,Grocery,Brand A,45.27,203
+GRO-95830,Pasta,Grocery,Brand D,47.94,394
+HOU-31550,Mop,Household,Brand C,35.37,274
+HOU-54348,Dish Soap,Household,Brand A,40.44,236
+GRO-44779,Rice,Grocery,Brand A,37.97,241
+GRO-26479,Sugar,Grocery,Brand D,16.46,253
+GRO-17149,Pasta,Grocery,Brand B,21.43,207
+HOU-30779,Mop,Household,Brand A,17.81,112
+HOU-53005,Broom,Household,Brand D,41.55,65
+GRO-60304,Milk Powder,Grocery,Brand D,33.74,237
+GRO-10835,Wheat Flour,Grocery,Brand C,15.78,429
+HOU-80782,Air Freshener,Household,Brand A,16.67,110
+GRO-99050,Coffee,Grocery,Brand D,27.94,159
+HOU-57898,Paper Towels,Household,Brand B,16.21,371
+GRO-76418,Honey,Grocery,Brand A,48.28,361
+HOU-54251,Garbage Bags,Household,Brand D,31.68,230
+HOU-56020,Mop,Household,Brand A,28.86,289
+HOU-82126,Laundry Softener,Household,Brand C,1.97,82
+HOU-85419,Mop,Household,Brand A,36.2,215
+HOU-39854,Garbage Bags,Household,Brand A,31.38,228
+GRO-77523,Rice,Grocery,Brand A,30.13,237
+GRO-92200,Salt,Grocery,Brand C,41.39,427
+GRO-55883,Honey,Grocery,Brand D,11.71,453
+HOU-89139,Broom,Household,Brand A,42.13,11
+GRO-94560,Honey,Grocery,Brand A,4.17,74
+GRO-77610,Tea,Grocery,Brand C,40.43,379
+GRO-92145,Sugar,Grocery,Brand D,43.17,267
+GRO-61503,Tea,Grocery,Brand D,41.0,158
+HOU-78930,Laundry Softener,Household,Brand A,36.72,436
+GRO-47932,Rice,Grocery,Brand C,14.64,475
+HOU-53234,Sponges,Household,Brand D,42.56,217
+GRO-13884,Coffee,Grocery,Brand D,13.29,346
+HOU-23905,Sponges,Household,Brand B,19.97,432
+HOU-49047,Sponges,Household,Brand C,20.57,247
+GRO-69201,Sugar,Grocery,Brand A,36.38,161
+HOU-34004,Mop,Household,Brand B,48.61,89
+GRO-74503,Rice,Grocery,Brand A,46.31,297
+HOU-97492,Garbage Bags,Household,Brand D,28.75,206
+GRO-53464,Milk Powder,Grocery,Brand D,8.45,52
+HOU-90546,Air Freshener,Household,Brand D,28.18,48
+HOU-26368,Air Freshener,Household,Brand C,14.14,312
+GRO-10715,Honey,Grocery,Brand D,12.55,189
+GRO-72740,Pasta,Grocery,Brand D,26.56,22
+HOU-11042,Mop,Household,Brand B,37.34,30
+GRO-74026,Wheat Flour,Grocery,Brand D,2.99,368
+GRO-41908,Wheat Flour,Grocery,Brand C,38.9,133
+GRO-90403,Honey,Grocery,Brand A,22.94,492
+GRO-44430,Rice,Grocery,Brand D,2.34,466
+HOU-76712,Paper Towels,Household,Brand D,9.88,194
+HOU-73799,Detergent,Household,Brand A,28.71,92
+HOU-73100,Broom,Household,Brand D,46.13,210
+GRO-37197,Tea,Grocery,Brand C,39.9,426
+HOU-98391,Dish Soap,Household,Brand B,26.57,193
+GRO-19311,Olive Oil,Grocery,Brand A,33.44,123
+GRO-96964,Salt,Grocery,Brand C,13.97,197
+GRO-41821,Pasta,Grocery,Brand A,17.32,229
+GRO-72530,Wheat Flour,Grocery,Brand B,2.3,115
+HOU-77556,Garbage Bags,Household,Brand D,4.61,48
+GRO-52601,Wheat Flour,Grocery,Brand C,3.04,169
+GRO-49224,Wheat Flour,Grocery,Brand A,21.83,462
+GRO-18349,Milk Powder,Grocery,Brand D,17.58,48
+GRO-31567,Coffee,Grocery,Brand A,10.67,369
+HOU-77354,Toilet Paper,Household,Brand D,48.34,445
+GRO-26777,Pasta,Grocery,Brand A,27.61,318
+GRO-80004,Olive Oil,Grocery,Brand A,30.69,39
+HOU-66435,Broom,Household,Brand C,27.08,89
+HOU-49571,Sponges,Household,Brand B,32.18,201
+GRO-67828,Honey,Grocery,Brand C,14.0,363
+HOU-21213,Garbage Bags,Household,Brand D,14.98,26
+HOU-72712,Dish Soap,Household,Brand B,40.34,486
+HOU-77399,Laundry Softener,Household,Brand D,21.44,195
