@@ -1,0 +1,10 @@
+pandas
+numpy
+ipykernel
+matplotlib
+seaborn
+pymysql
+python-dotenv
+nltk
+emoji
+textblob
