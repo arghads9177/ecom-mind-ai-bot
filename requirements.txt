@@ -8,3 +8,8 @@ python-dotenv
 nltk
 emoji
 textblob
+langchain
+openai
+langchain-openai
+langchain-chroma
+pypdf
