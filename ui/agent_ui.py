@@ -1,92 +1,126 @@
-import streamlit as st
-import sys
 import os
-# ✅ Add the project root to `sys.path` so Python can find `agents`
+import sys
+import streamlit as st
+
+# ✅ Add the project root directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-# ✅ Import the AI agent from `agents.ecom_agent`
+# ✅ Import the AI agent
 from agents.ecom_agent import ai_chatbot  
 
 # ✅ Streamlit Page Config
 st.set_page_config(page_title="Ecom-Mind AI Chatbot", page_icon="🤖", layout="wide")
 
-# ✅ Custom CSS for professional design
+# ✅ Custom CSS for a professional chatbot UI
+# height: 60vh;
+# background-color: #f9f9f9;
+# border-radius: 8px;
 st.markdown("""
     <style>
-        /* Set chat container height */
         .chat-container {
-            height: 500px;
+            
             overflow-y: auto;
             border: 1px solid #ddd;
             padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
+            
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-
-        /* Style user and AI messages */
+        .user-message, .ai-message {
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
         .user-message {
             background-color: #DCF8C6;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            text-align: left;
+            text-align: right;
+            margin-bottom:5px;
         }
-        
         .ai-message {
             background-color: #E3E3E3;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            text-align: left;
+            align-self: flex-start;
+            margin-bottom:5px;
         }
-
-        /* Style input area */
+        .system-message {
+            font-size: 20px;
+            text-align: center;
+        }
         .input-container {
             position: fixed;
-            bottom: 10px;
+            bottom: 0;
             width: 100%;
             background-color: white;
             padding: 10px;
             border-top: 1px solid #ddd;
         }
-        
-        /* Hide Streamlit footer */
-        footer {visibility: hidden;}
+        .chat-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 80vh; /* Ensures chat area takes most of the page */
+        }
+        footer {visibility: hidden;} /* Hide Streamlit footer */
     </style>
 """, unsafe_allow_html=True)
 
 # ✅ Initialize session state for chat history
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = [
-        {"role": "ai", "message": "Hello! I am Ecom-Mind AI, your personal e-commerce assistant. How can I assist you today?"}
-    ]
+# if "chat_history" not in st.session_state:
+#     st.session_state.chat_history = [
+#         {"role": "Ecom Assitant", "message": "Hello! I am Ecom-Mind AI, your personal e-commerce assistant. How can I assist you today?"}
+#     ]
 
-# ✅ Display Chat History
+# ✅ Chat Display Section (Inside a Container)
 st.markdown("## 🛍️ Ecom-Mind AI Chatbot 🤖")
-chat_container = st.container()
-with chat_container:
-    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+# Store last query in session state to prevent re-execution
+if "last_query" not in st.session_state:
+    st.session_state["last_query"] = ""
+
+if len(st.session_state.chat_history) == 0:
+    st.markdown("""
+                <div style='padding-top: 100px; padding-left: 40px; padding-right: 40px; text-align: center'>
+                <span class='system-message'>Hello! I am Ecom-Mind AI, your personal e-commerce assistant. How can I assist you today?</span>
+                """, unsafe_allow_html=True)
+    # User Input Section 
+    user_input = st.text_input("Type your query...")
+    st.markdown("</div>", unsafe_allow_html=True)
+else:
+# with st.container():
+# st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)  # Wrapper for full chat
+    # st.markdown('<div class="chat-container" id="chat-box">', unsafe_allow_html=True)  # Scrollable chat area
+
     for chat in st.session_state.chat_history:
-        if chat["role"] == "user":
-            st.markdown(f'<div class="user-message"><strong>You:</strong> {chat["message"]}</div>', unsafe_allow_html=True)
-        else:
-            st.markdown(f'<div class="ai-message"><strong>Ecom Agent:</strong> {chat["message"]}</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+        role_class = "user-message" if chat["role"] == "user" else "ai-message"
+        st.markdown(f'<div class="{role_class}"><strong>{chat["role"].capitalize()}:</strong> {chat["message"]}</div>', unsafe_allow_html=True)
 
-# ✅ User Input (Fixed at Bottom)
-with st.container():
-    user_input = st.text_input("Type your message...", key="user_input", help="Ask me anything related to e-commerce.")
+    # st.markdown('</div>', unsafe_allow_html=True)  # Close chat-container
+    # st.markdown('</div>', unsafe_allow_html=True)  # Close chat-wrapper 
 
-# ✅ Process User Input
+    # ✅ Scroll to the bottom automatically (Fix for chat staying within container)
+    st.markdown("""
+        <script>
+            var chatBox = document.getElementById("chat-box");
+            if (chatBox) {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        </script>
+    """, unsafe_allow_html=True)
+
+    
+    # ✅ User Input Section (Fixed at Bottom)
+    user_input = st.chat_input("Type your query...")
 if user_input:
-    # Append user query to chat history
     st.session_state.chat_history.append({"role": "user", "message": user_input})
 
-    # Get AI response
-    ai_response = ai_chatbot(user_input)
 
-    # Append AI response to chat history
-    st.session_state.chat_history.append({"role": "ai", "message": ai_response})
+# ✅ Process User Input and Generate Response
+if user_input and user_input != st.session_state["last_query"]:
+    st.session_state["last_query"] = user_input  # ✅ Store last query
 
-    # Rerun script to refresh chat history
-    st.experimental_rerun()
+    with st.spinner("🔍 Ecom-Mind AI is thinking..."):
+        ai_response = ai_chatbot(user_input)  # ✅ Calls the AI agent
+        st.session_state.chat_history.append({"role": "Ecom Assitant", "message": ai_response})
+
+    # ✅ Refresh UI after user input
+    st.rerun()

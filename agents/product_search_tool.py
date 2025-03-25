@@ -20,7 +20,7 @@ DB_CONFIG = {
     "database": "EcomMindDB"
 }
 
-# SQL Query Generation Template
+# SQL Query Generation Template with Case-Insensitive Search
 sql_prompt = PromptTemplate(
     input_variables=["query"],
     template="""
@@ -37,7 +37,8 @@ sql_prompt = PromptTemplate(
 
     Ensure:
     - If a price range is mentioned (e.g., "under ₹20,000"), include it in the WHERE clause.
-    - If a category or brand is mentioned, filter accordingly.
+    - If a category or brand is mentioned, filter accordingly using LOWER() to ensure case-insensitive search.
+    - Convert all text comparisons to lowercase, e.g., WHERE LOWER(product_name) LIKE LOWER('%query_value%').
     - If stock availability is required, add "stock > 0".
     - Do not use placeholders. Return a fully executable SQL statement.
     - Return only the SQL statement without markdown formatting.

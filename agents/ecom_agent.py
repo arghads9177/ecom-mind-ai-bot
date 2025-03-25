@@ -1,14 +1,19 @@
-import os
-import chromadb
+# Import libraries
 from langchain.agents import initialize_agent, AgentType
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.memory import VectorStoreRetrieverMemory
 from langchain.prompts import PromptTemplate
 from langchain_chroma.vectorstores import Chroma
 from dotenv import load_dotenv
-from product_search_tool import ProductSearchTool
-from order_tracking_tool import OrderTrackingTool
-from faq_tool import FAQTool
+import os
+import sys
+
+# Add the agents directory to sys.path to ensure correct imports
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
+from agents.product_search_tool import ProductSearchTool 
+from agents.order_tracking_tool import OrderTrackingTool 
+from agents.faq_tool import FAQTool 
 
 # Load environment variables
 load_dotenv()
@@ -44,7 +49,7 @@ classification_prompt = PromptTemplate(
     - Memory-related questions (e.g., "Remind me what I searched last time")
 
     **Rules for Classification**:
-    - Queries **about buying products, filtering by price, or brands** are **ALWAYS** relevant.
+    - Queries **about buying products, filtering by price, or brands, categories and sub-categories** are **ALWAYS** relevant.
     - Queries **about tracking orders, past purchases, or delivery status** are **ALWAYS** relevant.
     - Queries **about return policy, payments, or refunds** are **ALWAYS** relevant.
     - Queries **asking about past interactions, search history, or previously discussed topics** are **ALWAYS** relevant.
