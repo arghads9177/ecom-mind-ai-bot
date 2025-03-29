@@ -1,16 +1,19 @@
 import os
 from langchain.tools import Tool
 from langchain_chroma.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain.schema import Document
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+# os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["HUGGINGFACE_API_KEY"] = os.getenv("HUGGINGFACE_API_KEY")
 
-# Initialize OpenAI Embeddings
-embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+# Initialize OpenAI Embedding Model
+# embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
 # Initialize ChromaDB Client
 chroma_db_path = "../vector_db/ecom_db"

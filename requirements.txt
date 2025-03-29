@@ -1,5 +1,8 @@
-pandas
+torch==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+transformers
+sentence-transformers
 numpy
+pandas
 ipykernel
 matplotlib
 seaborn
@@ -9,8 +12,12 @@ nltk
 emoji
 textblob
 langchain
+langchain_community
 openai
 langchain-openai
 langchain-chroma
 pypdf
 streamlit
+langchain_huggingface
+groq
+langchain_groq

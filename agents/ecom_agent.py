@@ -1,9 +1,11 @@
 # Import libraries
 from langchain.agents import initialize_agent, AgentType
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain.memory import VectorStoreRetrieverMemory
 from langchain.prompts import PromptTemplate
 from langchain_chroma.vectorstores import Chroma
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
 import sys
@@ -15,12 +17,19 @@ from agents.product_search_tool import ProductSearchTool
 from agents.order_tracking_tool import OrderTrackingTool 
 from agents.faq_tool import FAQTool 
 
+# from product_search_tool import ProductSearchTool 
+# from order_tracking_tool import OrderTrackingTool 
+# from faq_tool import FAQTool
+
 # Load environment variables
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["HUGGINGFACE_API_KEY"] = os.getenv("HUGGINGFACE_API_KEY")
+os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 # Initialize OpenAI Embeddings
-embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+# embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
 # Initialize ChromaDB Client for long-term memory
 chroma_db_path = "../vector_db/ecom_memory"
@@ -31,7 +40,8 @@ retriever = vector_db.as_retriever(search_kwargs={"k": 1})  # Fetch top 1 simila
 long_term_memory = VectorStoreRetrieverMemory(retriever=retriever)
 
 # Initialize LLM for agent
-llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+# llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
 
 # Define agent tools
 tools = [ProductSearchTool, OrderTrackingTool, FAQTool]
@@ -83,7 +93,8 @@ def ai_chatbot(user_input):
         return retrieve_memory()
     
     if is_query_relevant(user_input):  
-        response = agent.run(user_input)  # Process only relevant queries
+        # response = agent.invoke(user_input)  # Process only relevant queries
+        response = agent.invoke(user_input)['output']
         # Store the query in memory for future recall
         vector_db.add_texts([user_input])
     else:
@@ -104,12 +115,12 @@ agent = initialize_agent(
 # Example Test Queries
 if __name__ == "__main__":
     test_queries = [
-        "Show me price and brand of corn Flour above $35",  # ✅ Relevant (Product Search)
+        # "Show me price and brand of Wheat Flour above $35",  # ✅ Relevant (Product Search)
         "Where is my order #4",  # ✅ Relevant (Order Tracking)
-        "Tell me a joke",  # ❌ Irrelevant → Should politely decline
-        "What is 2 + 2?",  # ❌ Irrelevant → Should politely decline
-        "How do I return an item?",  # ✅ Relevant (FAQ)
-        "Remind me what I searched last time"  # ✅ Should recall last search
+        # "Tell me a joke",  # ❌ Irrelevant → Should politely decline
+        # "What is 2 + 2?",  # ❌ Irrelevant → Should politely decline
+        # "How do I return an item?",  # ✅ Relevant (FAQ)
+        # "Remind me what I searched last time"  # ✅ Should recall last search
     ]
     
     for query in test_queries:
