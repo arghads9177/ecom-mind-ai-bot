@@ -3,6 +3,7 @@ import os
 import re
 from langchain.tools import Tool
 from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 
 from dotenv import load_dotenv
@@ -10,7 +11,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 MYSQL_PWD = os.getenv("MYSQL_PWD")
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+# os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 # Database connection settings
 DB_CONFIG = {
@@ -49,7 +51,8 @@ sql_prompt = PromptTemplate(
 )
 
 # Initialize OpenAI LLM
-llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+# llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
 
 # LLM Chain to generate SQL queries
 sql_chain = sql_prompt | llm
@@ -114,4 +117,4 @@ if __name__ == "__main__":
     
     for query in test_queries:
         print("\nUser Query:", query)
-        print(OrderTrackingTool.run(query))
+        print(OrderTrackingTool.invoke(query))

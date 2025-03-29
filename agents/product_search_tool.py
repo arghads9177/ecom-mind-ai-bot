@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 MYSQL_PWD = os.getenv("MYSQL_PWD")
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+# os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["HUGGINGFACE_API_KEY"] = os.getenv("HUGGINGFACE_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
@@ -36,15 +36,15 @@ sql_prompt = PromptTemplate(
 
     The table structure is:
     - sku (VARCHAR)
-    - product_name (VARCHAR)
-    - category (VARCHAR)
-    - brand (VARCHAR)
+    - product_name (VARCHAR) - Name of product
+    - category (VARCHAR) - Product category
+    - brand (VARCHAR) - Brand of product
     - price (DECIMAL)
     - stock (INT)
 
     Ensure:
     - If a price range is mentioned (e.g., "under ₹20,000"), include it in the WHERE clause.
-    - If a category or brand is mentioned, filter accordingly using LOWER() to ensure case-insensitive search.
+    - If a category, product_name or brand is mentioned, filter accordingly using LOWER() to ensure case-insensitive search.
     - Convert all text comparisons to lowercase, e.g., WHERE LOWER(product_name) LIKE LOWER('%query_value%').
     - If stock availability is required, add "stock > 0".
     - Do not use placeholders. Return a fully executable SQL statement.
@@ -53,9 +53,9 @@ sql_prompt = PromptTemplate(
 )
 
 # Initialize OpenAI LLM
-llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+# llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
 # llm = HuggingFaceEndpoint(repo_id="defog/sqlcoder-7b-2")  
-# llm = ChatGroq(model_name="llama3-8b-8192", temperature=0)
+llm = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
 
 # LLM Chain to generate SQL queries
 sql_chain = sql_prompt | llm
@@ -115,7 +115,7 @@ ProductSearchTool = Tool(
 
 # Example Test Query
 if __name__ == "__main__":
-    test_query = "Show me price and brand of Wheat Flour"
+    test_query = "Show me price and brand of Wheat Flour more than $35"
     print(ProductSearchTool.invoke(test_query))
 
 # import pymysql
